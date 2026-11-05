@@ -50,6 +50,7 @@ class modEasyDrop extends DolibarrModules
 
 		$this->module_parts = array(
 			'hooks' => array('all'),
+			'css' => array('/easydrop/css/easydrop.css'),
 		);
 
 		$this->dirs = array();

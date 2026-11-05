@@ -60,7 +60,7 @@ class ActionsEasyDrop
 		print '<script nonce="'.getNonce().'">window.easydropConfig = '.json_encode(array(
 			'text' => $langs->transnoentities('EasyDropText'),
 			'icon' => img_picto('', 'download', 'class="pictofixedwidth"'),
-		)).';</script>'."\n";
+		), JSON_HEX_TAG).';</script>'."\n";
 		print '<script nonce="'.getNonce().'" src="'.$jsurl.'"></script>'."\n";
 
 		return 0;

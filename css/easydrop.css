@@ -1,0 +1,7 @@
+/* EasyDrop — Copyright (C) 2026 Anatole Conseil — GPL-3.0-or-later */
+.easydrop-zone {
+	display: inline-block; box-sizing: border-box; width: 450px; max-width: 100%; vertical-align: middle;
+	border: 2px dashed var(--colortopbordertitle1, #888); border-radius: 8px; padding: 18px 12px;
+	text-align: center; cursor: pointer; background: none; color: inherit; font: inherit;
+}
+.easydrop-zone.easydrop-over { background: rgba(128, 128, 128, .15); }

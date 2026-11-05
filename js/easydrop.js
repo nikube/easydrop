@@ -8,24 +8,16 @@
 (function () {
 	var cfg = window.easydropConfig || {};
 
-	if (!document.getElementById('easydrop-style')) {
-		var st = document.createElement('style');
-		st.id = 'easydrop-style';
-		st.textContent =
-			'.easydrop-zone{display:inline-block;box-sizing:border-box;width:450px;max-width:100%;vertical-align:middle;' +
-			'border:2px dashed var(--colortopbordertitle1,#888);border-radius:8px;padding:18px 12px;text-align:center;cursor:pointer}' +
-			'.easydrop-zone.easydrop-over{background:rgba(128,128,128,.15)}';
-		document.head.appendChild(st);
-	}
-
 	function stop(e) { e.preventDefault(); e.stopPropagation(); }
 
 	function setup(input) {
 		input.dataset.easydrop = '1';
 		var form = input.form;
-		var sendit = form && form.querySelector('[type=submit][name=sendit]:not([disabled])');
+		// only the standard attach form auto-submits (imports also use name=sendit)
+		var sendit = form && input.closest('.formattachnewfile') && form.querySelector('[type=submit][name=sendit]:not([disabled])');
 
-		var zone = document.createElement('div');
+		var zone = document.createElement('button'); // button: focusable, Enter/Space open the picker
+		zone.type = 'button';
 		zone.className = 'easydrop-zone';
 		zone.innerHTML = (cfg.icon || '') + '<span class="opacitymedium easydrop-label"></span>';
 		var label = zone.querySelector('.easydrop-label');
@@ -34,7 +26,11 @@
 		input.style.display = 'none';
 		// v23+ hides the attach form behind a "+" button: a drop zone is only useful if visible
 		var wrap = input.closest('.divattachnewfile.hidden');
-		if (wrap) wrap.classList.remove('hidden');
+		if (wrap) {
+			wrap.classList.remove('hidden');
+			// its "+" button would now toggle the form away: redundant, hide it
+			document.querySelectorAll('a[href*="divattachnewfile"]').forEach(function (a) { a.style.display = 'none'; });
+		}
 
 		zone.addEventListener('click', function () { input.click(); });
 		input.addEventListener('change', function () {
