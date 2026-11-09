@@ -40,8 +40,8 @@ class modEasyDrop extends DolibarrModules
 		$this->family = 'interface';
 		$this->module_position = '90';
 		$this->name = preg_replace('/^mod/i', '', get_class($this));
-		$this->description = "EasyDrop - Drag & drop on every file upload field";
-		$this->descriptionlong = "Replaces the native file inputs (Linked files tab, ECM, imports, email attachments...) with a drop zone: drop files on it or click to browse. On the standard 'Attach a new file' form, the upload starts as soon as files are dropped.";
+		$this->description = "EasyDrop - Drag & drop file uploads, files of linked objects";
+		$this->descriptionlong = "Replaces the native file inputs (Linked files tab, ECM, imports, email attachments...) with a drop zone: drop files on it or click to browse. On the standard 'Attach a new file' form, the upload starts as soon as files are dropped. Option: on the Linked files tab, also list (with download links) the files of the linked objects: the order and proposal of an invoice, its third party, its project...";
 		$this->editor_name = 'Anatole Conseil';
 		$this->editor_url = '';
 		$this->version = '0.1.0';
@@ -54,7 +54,7 @@ class modEasyDrop extends DolibarrModules
 		);
 
 		$this->dirs = array();
-		$this->config_page_url = array();
+		$this->config_page_url = array('setup.php@easydrop');
 		$this->hidden = false;
 		$this->depends = array();
 		$this->requiredby = array();
@@ -62,7 +62,10 @@ class modEasyDrop extends DolibarrModules
 		$this->langfiles = array('easydrop@easydrop');
 		$this->phpmin = array(7, 4);
 		$this->need_dolibarr_version = array(19, 0);
-		$this->const = array();
+		$this->const = array(
+			1 => array('EASYDROP_DROPZONE', 'chaine', '1', 'Drop zone on file upload fields', 0, 'current', 0),
+			2 => array('EASYDROP_LINKED_FILES', 'chaine', '1', 'On Linked files tabs, list the files of linked objects', 0, 'current', 0),
+		);
 
 		if (!isset($conf->easydrop)) {
 			$conf->easydrop = new stdClass();

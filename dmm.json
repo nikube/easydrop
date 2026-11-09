@@ -2,7 +2,7 @@
   "schema_version": "1",
   "module_id": "easydrop",
   "name": "EasyDrop",
-  "description": "Turns every file upload field into a drag & drop zone (click to browse, drop to send). Purely client-side.",
+  "description": "Drag & drop on every file upload field, and the files of linked objects (order, proposal, third party, project) on Linked files tabs.",
   "author": "Anatole Conseil",
   "url": "https://github.com/nikube/easydrop",
   "license": "GPL-3.0-or-later",

@@ -1,4 +1,8 @@
 # Copyright (C) 2026 Anatole Conseil
 Module194057Name=EasyDrop
-Module194057Desc=Drag & drop on every file upload field
+Module194057Desc=Drag & drop file uploads, files of linked objects on Linked files tabs
 EasyDropText=Drop files here or click to browse
+EasyDropSetup=EasyDrop setup
+EasyDropOptDropzone=Drop zone on file upload fields (click to browse, drop to send)
+EasyDropOptLinkedFiles=On Linked files tabs, list the files of linked objects (order, proposal, third party, project...)
+EasyDropLinkedFiles=Files of linked objects

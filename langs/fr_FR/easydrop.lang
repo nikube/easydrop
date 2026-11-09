@@ -1,4 +1,8 @@
 # Copyright (C) 2026 Anatole Conseil
 Module194057Name=EasyDrop
-Module194057Desc=Glisser-déposer sur tous les champs d'envoi de fichier
+Module194057Desc=Glisser-déposer pour envoyer des fichiers, fichiers des éléments liés sur les onglets Fichiers joints
 EasyDropText=Déposez vos fichiers ici ou cliquez pour parcourir
+EasyDropSetup=Configuration EasyDrop
+EasyDropOptDropzone=Zone de glisser-déposer sur les champs d'envoi de fichier (clic pour parcourir, dépôt pour envoyer)
+EasyDropOptLinkedFiles=Sur les onglets Fichiers joints, lister les fichiers des éléments liés (commande, devis, tiers, projet...)
+EasyDropLinkedFiles=Fichiers des éléments liés
